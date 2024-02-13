@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Info</title>
+    <!-- google fonts -->
+  <link href="//fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style-starter.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <style>
+      @import url("https://fonts.googleapis.com/css?family=Titillium+Web");
+  * {
+    font-family: "Titillium Web", sans-serif;
+  }
+  
+  .carousel-item {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  
+  
+  
+  body {
+      padding-top: 20px;
+  }
+  
+  .carousel {
+    width: 100%;
+  }
+  
+  .slide-box {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .slide-box img {
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .slide-box img {
+      -ms-flex: 0 0 33.3333%;
+      flex: 0 0 33.3333%;
+      max-width: 33.3333%;
+    }
+  }
+  
+  @media (min-width: 992px)
+  {
+    .slide-box img {
+      -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+  }
+  
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: .5rem;
+  }
+  .container {
+      max-width: 1140px;
+  }
+  </style>
+</head>
+<script>
+  var $grid = $('.grid').isotope({
+  itemSelector: '.element-item',
+  layoutMode: 'fitRows'
+});
+// filter functions
+var filterFns = {
+  // show if number is greater than 50
+  numberGreaterThan50: function() {
+    var number = $(this).find('.number').text();
+    return parseInt( number, 10 ) > 50;
+  },
+  // show if name ends with -ium
+  ium: function() {
+    var name = $(this).find('.name').text();
+    return name.match( /ium$/ );
+  }
+};
+// bind filter button click
+$('.filters-button-group').on( 'click', 'button', function() {
+  var filterValue = $( this ).attr('data-filter');
+  // use filterFn if matches value
+  filterValue = filterFns[ filterValue ] || filterValue;
+  $grid.isotope({ filter: filterValue });
+});
+// change is-checked class on buttons
+$('.button-group').each( function( i, buttonGroup ) {
+  var $buttonGroup = $( buttonGroup );
+  $buttonGroup.on( 'click', 'button', function() {
+    $buttonGroup.find('.is-checked').removeClass('is-checked');
+    $( this ).addClass('is-checked');
+  });
+});
+
+</script>
+<body>
+    <ul class="ct-socials">
+    <li style="background-color:red;font-size:25px;">
+       <a href="tel:7066975454" target="_blank"><i class="fa fa-phone"></i></a>
+   </li>
+    <li style="background-color:#1fa831;font-size:25px;">
+       <a href="https://api.whatsapp.com/send?phone=917066975454" target="_blank"><i class="fa fa-whatsapp"></i></a>
+    </li>
+    <li style="background-color:red;font-size:25px;">
+       <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+    </li>
+ </ul>
+    <header>
+        <div class="w3l-header" id="home">
+          <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark pl-0 pr-0">
+              <a class="navbar-brand m-0" href="Achievement.html"><img src="assets/images/vivek2_logo.jpg" style="width:50px; height: 50x;"></a>
+              <!-- if logo is image enable this   
+                  <a class="navbar-brand" href="#index.html">
+                      <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+                  </a> -->
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fa fa-bars"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active mr-lg-4">
+                    <a class="nav-link pl-0 pr-0" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item mr-lg-4">
+                    <a class="nav-link pl-0 pr-0" href="about.html">About me</a>
+                  </li>
+                  
+                  <li class="nav-item mr-lg-4">
+                    <a class="nav-link pl-0 pr-0" href="contact.html">Contact</a>
+                  </li>
+                  <li class="nav-item mr-lg-4">
+                    <a class="nav-link pl-0 pr-0" href="Projects.html">Projects</a>
+                  </li>
+                  <li class="nav-item mr-lg-4"">
+                    <a class="nav-link pl-0 pr-0" href="Achievement.html">Achievement</a>
+                  </li>
+                  <li class="nav-item dropdown mr-lg-3">
+                    <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      Gallery</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="Gallery.html">Image project</a>
+                      <a class="dropdown-item" href="Gallery.html">Video project</a>
+                      <a class="dropdown-item" href="Gallery.html">Sound project</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <!-- //header -->
+      <h1 style="text-align: center;">Achievements</h1>
+      <section class="w3l-gallery-7">
+        <div class="gallery-7_sur py-5">
+          <div class="container py-lg-5">
+            <div id="container">
+              <div class="galleryContainer">
+                <div class="gallery">
+                  <input type="radio" name="controls" id="c1" checked><img class="galleryImage img-fluid" id="i1" src="assets/images/C Programming_STR.jpg" class="img" alt="">
+                  <input type="radio" name="controls" id="c2"><img class="galleryImage img-fluid" id="i2" src="assets/images/HTML_STR.jpg" class="img" alt="">
+                  <input type="radio" name="controls" id="c3"><img class="galleryImage img-fluid" id="i3" src="assets/images/PHP_STR.jpg" class="img" alt="">
+                  <input type="radio" name="controls" id="c4"><img class="galleryImage img-fluid" id="i4" src="assets/images/PYTHON_STR.jpg" class="img" alt="">
+                  <input type="radio" name="controls" id="c5"><img class="galleryImage img-fluid" id="i5" src="assets/images/SCSU_STR.jpg" class="img" alt="">
+                  <input type="radio" name="controls" id="c6"><img class="galleryImage img-fluid" id="i6" src="assets/images/Accenture completion_certificate.jpg" class="img" alt="">
+                  <input type="radio" name="controls" id="c7"><img class="galleryImage img-fluid" id="i7" src="assets/images/v15.jpg" class="img" alt="">
+                  <input type="radio" name="controls" id="c8"><img class="galleryImage img-fluid" id="i8" src="assets/images/v16.jpg" class="img" alt="">
+                  <input type="radio" name="controls" id="c9"><img class="galleryImage img-fluid" id="i9" src="assets/images/v23.jpg" class="img" alt="">
+                  <input type="radio" name="controls" id="c10"><img class="galleryImage img-fluid" id="i10" src="assets/images/v21.jpg" class="img" alt="">
+                </div>
+                <div class="thumbnails">
+                  <label class="thumbnailImage" for="c1"><img src="assets/images/C Programming_STR.jpg" class="img img-fluid" alt=""></label>
+                  <label class="thumbnailImage" for="c2"><img src="assets/images/HTML_STR.jpg" class="img img-fluid" alt=""></label>
+                  <label class="thumbnailImage" for="c3"><img src="assets/images/PHP_STR.jpg" class="img img-fluid" alt=""></label>
+                  <label class="thumbnailImage" for="c4"><img src="assets/images/PYTHON_STR.jpg" class="img img-fluid" alt=""></label>
+                  <label class="thumbnailImage" for="c5"><img src="assets/images/SCSU_STR.jpg" class="img img-fluid" alt=""></label>
+                  <label class="thumbnailImage" for="c6"><img src="assets/images/Accenture completion_certificate.jpg" class="img img-fluid" alt=""></label>
+                  <label class="thumbnailImage" for="c7"><img src="assets/images/v15.jpg" class="img img-fluid" alt=""></label>
+                  <label class="thumbnailImage" for="c8"><img src="assets/images/v16.jpg" class="img img-fluid" alt=""></label>
+                  <label class="thumbnailImage" for="c9"><img src="assets/images/v23.jpg" class="img img-fluid" alt=""></label>
+                  <label class="thumbnailImage" for="c10"><img src="assets/images/v21.jpg" class="img img-fluid" alt=""></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slider-section">
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1"></li>
+                <li data-target="#carousel" data-slide-to="2"></li>
+            </ol> <!-- End of Indicators -->
+    
+            <!-- Carousel Content -->
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active" style="background-image: url('assets/images/C Programming_STR.jpg');">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>maruti suzuki</h3>
+                     
+                    </div>
+                </div> <!-- End of Carousel Item -->
+    
+                <div class="carousel-item" style="background-image: url('assets/images/HTML_STR.jpg');">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Bridge Picture</h3>
+                        
+                    </div>
+                </div> <!-- End of Carousel Item -->
+    
+                <div class="carousel-item" style="background-image: url('assets/images/PHP_STR.jpg');">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Flowers & Grass</h3>
+                       
+                    </div>
+                    
+                
+                </div> <!-- End of Carousel Item -->
+            </div> <!-- End of Carousel Content -->
+    
+            <!-- Previous & Next -->
+            <a href="#carousel" class="carousel-control-prev" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <a href="#carousel" class="carousel-control-next" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+        </div> <!-- End of Carousel -->
+    </section> <!-- End of Slider -->
+    
+    
+      </section>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+      <div style="height: 80px;"></div>
+      <!-- Footer -->
+  <footer>
+    <section class="w3l-footers-1">
+      <div class="footer py-3">
+        <div class="container">
+          <div class="footer-content">
+            <div class="row">
+              <div class="col-lg-8 footer-left">
+                <p class="m-0">MR.VIEK_PATIL_7515</p>
+              </div>
+              <div class="col-lg-4 footer-right text-lg-right text-center mt-lg-0 mt-3">
+                <ul class="social m-0 p-0">
+                  <li><a href="https://www.facebook.com/home.php"><span class="fa fa-facebook"></span></a></li>
+                  <li><a href="https://www.linkedin.com/login"><span class="fa fa-linkedin"></span></a></li>
+                  <li><a href="https://www.instagram.com/"><span class="fa fa-instagram"></span></a></li>
+                  <li><a href="https://twitter.com/i/flow/login"><span class="fa fa-twitter"></span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </footer>
+</body>
+</html>
